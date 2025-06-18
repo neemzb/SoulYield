@@ -1,13 +1,3 @@
-export default function Home() {
-  return (
-    <main style={{ padding: "4rem", fontFamily: "sans-serif", textAlign: "center" }}>
-      <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>SoulYield</h1>
-      <p style={{ fontSize: "1.25rem" }}>
-        Welcome to SoulYield — where inner growth meets intelligent design.
-      </p>
-    </main>
-  );
-}
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
