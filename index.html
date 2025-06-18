@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulYield - AI-Powered Inner Evolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #E5E5E5;
+            --gray-400: #A3A3A3;
+            --gray-600: #525252;
+            
+            /* Bold accent colors */
+            --electric-blue: #0066FF;
+            --vibrant-purple: #8B5CF6;
+            --emerald-green: #10B981;
+            --coral-pink: #FF6B6B;
+            --golden-yellow: #F59E0B;
+            --neon-cyan: #06B6D4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--black);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--vibrant-purple));
+            border-radius: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--electric-blue);
+            transform: translateY(-1px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--electric-blue)20, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--vibrant-purple)20, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: float 20s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, -30px) scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--black);
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--electric-blue), var(--vibrant-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--electric-blue), var(--vibrant-purple));
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto 5rem;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--gray-50);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid var(--gray-100);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--emerald-green), var(--coral-pink));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, var(--electric-blue), var(--neon-cyan));
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--emerald-green), var(--golden-yellow));
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--vibrant-purple), var(--coral-pink));
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .feature-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 1.05rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--gray-100);
+            position: relative;
+        }
+
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--vibrant-purple), var(--emerald-green), var(--coral-pink));
+            border-radius: 32px 32px 0 0;
+        }
+
+        .detailed-contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .checkbox-label,
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--black);
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .checkbox-label:hover,
+        .radio-label:hover {
+            background: var(--gray-50);
+        }
+
+        .checkbox-label input[type="checkbox"],
+        .radio-label input[type="radio"] {
+            display: none;
+        }
+
+        .checkmark,
+        .radio-mark {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray-200);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .radio-mark {
+            border-radius: 50%;
+        }
+
+        .checkbox-label input[type="checkbox"]:checked + .checkmark,
+        .radio-label input[type="radio"]:checked + .radio-mark {
+            background: var(--electric-blue);
+            border-color: var(--electric-blue);
+            transform: scale(1.1);
+        }
+
+        .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .radio-label input[type="radio"]:checked + .radio-mark::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .consent-group,
+        .newsletter-group {
+            margin-top: 1.5rem;
+        }
+
+        .consent-group .checkbox-label,
+        .newsletter-group .checkbox-label {
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .consent-group .checkmark,
+        .newsletter-group .checkmark {
+            margin-top: 2px;
+        }
+
+        .contact-submit-btn {
+            background: linear-gradient(135deg, var(--electric-blue), var(--vibrant-purple));
+            color: white;
+            border: none;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+        }
+
+        .contact-submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .contact-submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .contact-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
+        }
+
+        .contact-submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-loading {
+            display: none;
+        }
+
+        .contact-submit-btn.loading .btn-text {
+            display: none;
+        }
+
+        .contact-submit-btn.loading .btn-loading {
+            display: inline;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--vibrant-purple), var(--emerald-green), var(--coral-pink));
+        }
+
+        .final-cta .section-title {
+            color: white;
+        }
+
+        .final-cta .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .waitlist-form input {
+            flex: 1;
+            padding: 1.25rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .waitlist-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .waitlist-form input:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.2);
+        }
+
+        .waitlist-form button {
+            background: linear-gradient(135deg, var(--golden-yellow), var(--coral-pink));
+            color: white;
+            border: none;
+            padding: 1.25rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .waitlist-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-content .logo {
+            color: white;
+        }
+
+        .footer-content .logo::after {
+            background: linear-gradient(90deg, var(--electric-blue), var(--vibrant-purple));
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .checkbox-group,
+            .radio-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-form-container {
+                padding: 2rem;
+            }
+            
+            .waitlist-form {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bold accent elements */
+        .accent-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">SoulYield</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#waitlist">Join Waitlist</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Unlock Your <span class="highlight">Inner Evolution</span></h1>
+                <p>Where artificial intelligence meets ancient wisdom. SoulYield guides your journey to mental clarity, emotional resilience, and profound inner growth through personalized AI coaching.</p>
+                <a href="#waitlist" class="cta-button">Unlock Early Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title fade-in">AI-Guided Personal Transformation</h2>
+            <p class="section-subtitle fade-in">Experience the perfect fusion of cutting-edge technology and timeless wisdom</p>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Intelligent Insights</h3>
+                    <p>Our AI analyzes your patterns, emotions, and growth trajectory to provide personalized guidance that evolves with your journey.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Adaptive Growth Plans</h3>
+                    <p>Dynamic programs that adjust to your progress, ensuring continuous evolution and breakthrough moments in your personal development.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">✨</div>
+                    <h3>Mindful Integration</h3>
+                    <p>Seamlessly blend ancient practices with modern technology for a holistic approach to mental clarity and emotional balance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Connect With Your Journey</h2>
+            <p class="section-subtitle fade-in">Ready to begin your transformation? Let's explore how SoulYield can guide your unique path to inner evolution.</p>
+            
+            <div class="contact-form-container fade-in">
+                <form class="detailed-contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organization">Organization/Company</label>
+                        <input type="text" id="organization" name="organization">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Your Role</label>
+                        <select id="role" name="role">
+                            <option value="">Select your role...</option>
+                            <option value="individual">Individual Seeker</option>
+                            <option value="coach">Life/Wellness Coach</option>
+                            <option value="therapist">Therapist/Counselor</option>
+                            <option value="executive">Business Executive</option>
+                            <option value="entrepreneur">Entrepreneur</option>
+                            <option value="educator">Educator/Trainer</option>
+                            <option value="healthcare">Healthcare Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Primary Interest</label>
+                        <select id="interest" name="interest">
+                            <option value="">What interests you most?</option>
+                            <option value="personal">Personal Growth & Development</option>
+                            <option value="mental-clarity">Mental Clarity & Focus</option>
+                            <option value="emotional-resilience">Emotional Resilience</option>
+                            <option value="stress-management">Stress & Anxiety Management</option>
+                            <option value="spiritual-growth">Spiritual Growth</option>
+                            <option value="business-integration">Business/Team Integration</option>
+                            <option value="coaching-tools">Coaching Tools & Resources</option>
+                            <option value="enterprise">Enterprise Solutions</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Current Wellness Practices</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="meditation">
+                                <span class="checkmark"></span>
+                                Meditation
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="mindfulness">
+                                <span class="checkmark"></span>
+                                Mindfulness
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="yoga">
+                                <span class="checkmark"></span>
+                                Yoga
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="journaling">
+                                <span class="checkmark"></span>
+                                Journaling
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="therapy">
+                                <span class="checkmark"></span>
+                                Therapy/Counseling
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="coaching">
+                                <span class="checkmark"></span>
+                                Life Coaching
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="practices" value="none">
+                                <span class="checkmark"></span>
+                                New to wellness practices
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals">Your Growth Goals</label>
+                        <textarea id="goals" name="goals" rows="4" placeholder="Tell us about your personal or professional growth goals, challenges you're facing, or what you hope to achieve through AI-guided development..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">Preferred Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">When would you like to start?</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="1-2-weeks">Within 1-2 weeks</option>
+                            <option value="1-month">Within 1 month</option>
+                            <option value="2-3-months">2-3 months</option>
+                            <option value="exploring">Just exploring options</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Investment Range (Optional)</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range...</option>
+                            <option value="under-100">Under $100/month</option>
+                            <option value="100-250">$100-250/month</option>
+                            <option value="250-500">$250-500/month</option>
+                            <option value="500-1000">$500-1000/month</option>
+                            <option value="1000-plus">$1000+/month</option>
+                            <option value="enterprise">Enterprise/Custom</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="consultation">Consultation Preference</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="consultation" value="call">
+                                <span class="radio-mark"></span>
+                                Phone/Video Call
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="consultation" value="email">
+                                <span class="radio-mark"></span>
+                                Email Communication
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="consultation" value="either">
+                                <span class="radio-mark"></span>
+                                Either is fine
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Message</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Any specific questions or additional information you'd like to share?"></textarea>
+                    </div>
+                    
+                    <div class="form-group consent-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="consent" required>
+                            <span class="checkmark"></span>
+                            I consent to being contacted by SoulYield regarding my inquiry and understand that my information will be kept confidential. *
+                        </label>
+                    </div>
+                    
+                    <div class="form-group newsletter-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" checked>
+                            <span class="checkmark"></span>
+                            I'd like to receive updates about SoulYield's launch and wellness insights.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="contact-submit-btn">
+                        <span class="btn-text">Send My Message</span>
+                        <span class="btn-loading">Sending...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="waitlist">
+        <div class="container">
+            <h2 class="section-title fade-in">Begin Your Evolution Today</h2>
+            <p class="section-subtitle fade-in">Join thousands on the waitlist for early access to AI-powered inner transformation</p>
+            
+            <form class="waitlist-form fade-in" id="waitlistForm">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">SoulYield</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p>&copy; 2024 SoulYield. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Waitlist form submission
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Simulate form submission
+            const button = this.querySelector('button');
+            const originalText = button.textContent;
+            button.textContent = 'Joining...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = 'Welcome to SoulYield! ✨';
+                button.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.background = '';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const button = this.querySelector('.contact-submit-btn');
+            const formData = new FormData(this);
+            
+            // Add loading state
+            button.classList.add('loading');
+            button.disabled = true;
+            
+            // Collect form data
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Success state
+                button.classList.remove('loading');
+                button.innerHTML = '<span class="btn-text">Message Sent Successfully! ✨</span>';
+                button.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.innerHTML = `
+                    <div style="background: linear-gradient(135deg, #ECFDF5, #F0FDF4); border: 2px solid #10B981; border-radius: 16px; padding: 1.5rem; margin-top: 1.5rem; text-align: center; color: #065F46;">
+                        <strong>🎉 Thank you for reaching out!</strong><br>
+                        We'll respond within 24 hours to discuss your journey with SoulYield.
+                    </div>
+                `;
+                this.appendChild(successMessage);
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    this.reset();
+                    button.innerHTML = '<span class="btn-text">Send My Message</span>';
+                    button.style.background = '';
+                    button.disabled = false;
+                    successMessage.remove();
+                }, 5000);
+                
+            }, 2000);
+        });
+
+        // Form validation enhancements
+        document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#EF4444';
+                    this.style.boxShadow = '0 0 0 4px rgba(239, 68, 68, 0.1)';
+                } else {
+                    this.style.borderColor = '#E5E5E5';
+                    this.style.boxShadow = 'none';
+                }
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.style.borderColor === 'rgb(239, 68, 68)') {
+                    this.style.borderColor = '#E5E5E5';
+                    this.style.boxShadow = 'none';
+                }
+            });
+        });
+
+        // Add dynamic color animations
+        function createColorBurst() {
+            const colors = ['#0066FF', '#8B5CF6', '#10B981', '#FF6B6B', '#F59E0B', '#06B6D4'];
+            const burst = document.createElement('div');
+            burst.style.position = 'fixed';
+            burst.style.width = '6px';
+            burst.style.height = '6px';
+            burst.style.background = colors[Math.floor(Math.random() * colors.length)];
+            burst.style.borderRadius = '50%';
+            burst.style.pointerEvents = 'none';
+            burst.style.zIndex = '1';
+            burst.style.opacity = '0.8';
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            burst.style.left = x + 'px';
+            burst.style.top = y + 'px';
+            
+            document.body.appendChild(burst);
+            
+            const animation = burst.animate([
+                { transform: 'scale(0) rotate(0deg)', opacity: 0.8 },
+                { transform: 'scale(1.5) rotate(180deg)', opacity: 0.4 },
+                { transform: 'scale(0) rotate(360deg)', opacity: 0 }
+            ], {
+                duration: 2000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => burst.remove();
+        }
+
+        // Create color bursts occasionally
+        setInterval(createColorBurst, 4000);
+    </script>
+</body>
+</html>
